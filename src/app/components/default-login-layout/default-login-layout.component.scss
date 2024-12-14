@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@use "../../../styles/variables" as *;
 
 main {
   display: flex;
@@ -49,6 +49,11 @@ main {
         background-color: transparent;
 
         cursor: pointer;
+
+        &:disabled{
+          opacity: 0.8;
+          cursor: not-allowed;
+        }
 
         &.btn-primary {
           background-color: $primary-color;
