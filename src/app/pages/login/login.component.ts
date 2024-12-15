@@ -37,9 +37,11 @@ export class LoginComponent {
   }
 
   submit() {
-    console.log(this.loginForm.value);
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success('Login feito com sucesso!'),
+      next: () => {
+        this.toastService.success('Login feito com sucesso!');
+        this.router.navigate(['user'])
+      },
       error: () => this.toastService.error('Erro insperado! Tente novamente mais tarde.')
     })
   }
